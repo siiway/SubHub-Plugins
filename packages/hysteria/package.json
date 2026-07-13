@@ -1,0 +1,40 @@
+{
+  "name": "@siiway/subhub-plugin-hysteria",
+  "version": "0.0.0",
+  "description": "SubHub Hysteria 协议解析插件（hysteria://）。",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "keywords": [
+    "subhub",
+    "plugin",
+    "proxy",
+    "hysteria"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/siiway/SubHub-Plugins.git",
+    "directory": "packages/hysteria"
+  },
+  "dependencies": {
+    "@siiway/subhub-plugin-sdk": "^0.0.0"
+  }
+}
