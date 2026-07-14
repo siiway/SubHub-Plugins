@@ -1,6 +1,6 @@
 {
   "name": "@siiway/subhub-plugin-base64",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "SubHub 通用 Base64 订阅格式插件。",
   "type": "module",
   "main": "./dist/index.js",
@@ -35,6 +35,6 @@
     "directory": "packages/base64"
   },
   "dependencies": {
-    "@siiway/subhub-plugin-sdk": "^0.0.0"
+    "@siiway/subhub-plugin-sdk": "^0.1.0"
   }
 }
