@@ -1,6 +1,6 @@
 {
   "name": "@siiway/subhub-plugin-clash",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "SubHub Clash / Mihomo 订阅格式插件（YAML）。",
   "type": "module",
   "main": "./dist/index.js",
@@ -35,6 +35,6 @@
     "directory": "packages/clash"
   },
   "dependencies": {
-    "@siiway/subhub-plugin-sdk": "^0.0.0"
+    "@siiway/subhub-plugin-sdk": "^0.1.0"
   }
 }

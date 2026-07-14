@@ -1,6 +1,6 @@
 {
   "name": "@siiway/subhub-plugin-sdk",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "SubHub 插件开发 SDK：插件系统核心类型与协议解析共用工具。",
   "type": "module",
   "main": "./dist/index.js",

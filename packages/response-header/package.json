@@ -1,6 +1,6 @@
 {
   "name": "@siiway/subhub-plugin-response-header",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "SubHub 响应头中间件示例插件。",
   "type": "module",
   "main": "./dist/index.js",
@@ -35,6 +35,6 @@
     "directory": "packages/response-header"
   },
   "dependencies": {
-    "@siiway/subhub-plugin-sdk": "^0.0.0"
+    "@siiway/subhub-plugin-sdk": "^0.1.0"
   }
 }
