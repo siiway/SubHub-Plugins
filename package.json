@@ -13,12 +13,12 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run build -w @siiway/subhub-plugin-sdk && npm run build --workspaces --if-present",
-    "typecheck": "npm run build",
+    "build": "bun run --filter '@siiway/subhub-plugin-sdk' build && bun run --filter '@siiway/subhub-plugin-*' build",
+    "typecheck": "bun run build",
     "clean": "rm -rf packages/*/dist packages/*/*.tsbuildinfo",
     "changeset": "changeset",
     "version": "changeset version",
-    "release": "npm run build && changeset publish"
+    "release": "bun run build && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.31.0",

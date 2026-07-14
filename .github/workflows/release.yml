@@ -24,23 +24,30 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
+      # 用 Bun 做安装/构建；仍需 setup-node 写入带 token 的 .npmrc，
+      # 供 changeset publish 底层的 npm publish 做 registry 认证与 provenance。
+      - name: Setup Node.js (npm registry auth)
         uses: actions/setup-node@v4
         with:
           node-version: 24
           registry-url: https://registry.npmjs.org
 
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
       - name: Install dependencies
-        run: npm ci
+        run: bun install --frozen-lockfile
 
       - name: Build all packages
-        run: npm run build
+        run: bun run build
 
       - name: Create Release Pull Request or Publish to npm
         uses: changesets/action@v1
         with:
-          publish: npm run release
-          version: npm run version
+          publish: bun run release
+          version: bun run version
           commit: "chore: release packages"
           title: "chore: release packages"
         env:

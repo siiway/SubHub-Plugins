@@ -5,9 +5,9 @@
     "": {
       "name": "@siiway/subhub-plugins",
       "devDependencies": {
-        "@changesets/cli": "latest",
-        "@cloudflare/workers-types": "latest",
-        "typescript": "latest",
+        "@changesets/cli": "^2.31.0",
+        "@cloudflare/workers-types": "^5.20260713.1",
+        "typescript": "^7.0.2",
       },
     },
     "packages/anytls": {
