@@ -24,18 +24,23 @@ jobs:
         with:
           fetch-depth: 0
 
-      # 用 Bun 做安装/构建。发布用 NPM_TOKEN 认证（写入 .npmrc authToken），
+      # 用 Bun 做安装/构建。发布用 NPM_TOKEN 认证（见下方 Configure npm auth），
       # 同时保留 provenance 生成（依赖下方 id-token: write 权限）。
+      # 不用 setup-node 的 registry-url/scope，避免其写入已废弃的 always-auth 配置。
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          registry-url: "https://registry.npmjs.org"
-          scope: "@siiway"
 
       # 生成 provenance 需要较新的 npm（>= 11.5.1）
       - name: Update npm for provenance publishing
         run: npm install -g npm@latest
+
+      # 手写 ~/.npmrc，仅包含 authToken，避免 always-auth 废弃告警
+      - name: Configure npm auth
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > "$HOME/.npmrc"
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -48,7 +53,7 @@ jobs:
       - name: Build all packages
         run: bun run build
 
-      # changeset publish 底层的 npm publish 用 NODE_AUTH_TOKEN（NPM_TOKEN）认证；
+      # changeset publish 底层的 npm publish 用 ~/.npmrc 里的 authToken 认证；
       # NPM_CONFIG_PROVENANCE=true 时仍会借助 id-token: write 生成 provenance。
       - name: Create Release Pull Request or Publish to npm
         uses: changesets/action@v1
@@ -59,5 +64,4 @@ jobs:
           title: "chore: release packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: "true"
