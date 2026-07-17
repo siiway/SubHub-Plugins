@@ -25,6 +25,7 @@
 | `@siiway/subhub-plugin-base64` | formatter | 通用 Base64 订阅 |
 | `@siiway/subhub-plugin-clash` | formatter | Clash / Mihomo YAML 订阅 |
 | `@siiway/subhub-plugin-response-header` | middleware | 响应头示例插件 |
+| `@siiway/subhub-plugin-subcheck` | middleware | 代理可用性检测插件 |
 
 ## 开发
 

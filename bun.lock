@@ -63,6 +63,13 @@
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
+    "packages/subcheck": {
+      "name": "@siiway/subhub-plugin-subcheck",
+      "version": "0.0.0",
+      "dependencies": {
+        "@siiway/subhub-plugin-sdk": "^0.0.0",
+      },
+    },
     "packages/trojan": {
       "name": "@siiway/subhub-plugin-trojan",
       "version": "0.0.0",
@@ -151,6 +158,8 @@
     "@siiway/subhub-plugin-sdk": ["@siiway/subhub-plugin-sdk@workspace:packages/sdk"],
 
     "@siiway/subhub-plugin-shadowsocks": ["@siiway/subhub-plugin-shadowsocks@workspace:packages/shadowsocks"],
+
+    "@siiway/subhub-plugin-subcheck": ["@siiway/subhub-plugin-subcheck@workspace:packages/subcheck"],
 
     "@siiway/subhub-plugin-trojan": ["@siiway/subhub-plugin-trojan@workspace:packages/trojan"],
 
