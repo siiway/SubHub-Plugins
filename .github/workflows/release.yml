@@ -24,13 +24,16 @@ jobs:
         with:
           fetch-depth: 0
 
-      # 用 Bun 做安装/构建；仍需 setup-node 写入带 token 的 .npmrc，
-      # 供 changeset publish 底层的 npm publish 做 registry 认证与 provenance。
-      - name: Setup Node.js (npm registry auth)
+      # 用 Bun 做安装/构建。发布走 OIDC Trusted Publishing，无需 npm token；
+      # 因此这里不再设置 registry-url（不写入 .npmrc authToken），避免干扰 OIDC。
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          registry-url: https://registry.npmjs.org
+
+      # OIDC Trusted Publishing 需要 npm >= 11.5.1
+      - name: Update npm for trusted publishing
+        run: npm install -g npm@latest
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -43,6 +46,8 @@ jobs:
       - name: Build all packages
         run: bun run build
 
+      # 无 NPM_TOKEN：changeset publish 底层的 npm publish 会用 GitHub OIDC
+      # 向已配置 Trusted Publisher 的包做认证；provenance 也自动生成。
       - name: Create Release Pull Request or Publish to npm
         uses: changesets/action@v1
         with:
@@ -52,6 +57,4 @@ jobs:
           title: "chore: release packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: "true"

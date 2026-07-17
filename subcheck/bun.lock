@@ -1,0 +1,15 @@
+{
+  "lockfileVersion": 1,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "subhub-plugin-subcheck",
+      "dependencies": {
+        "@siiway/subhub-plugin-sdk": "file:../../SubHub/node_modules/@siiway/subhub-plugin-sdk",
+      },
+    },
+  },
+  "packages": {
+    "@siiway/subhub-plugin-sdk": ["@siiway/subhub-plugin-sdk@file:../../SubHub/node_modules/@siiway/subhub-plugin-sdk", {}],
+  }
+}
