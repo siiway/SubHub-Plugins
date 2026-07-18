@@ -1,6 +1,6 @@
 {
   "name": "@siiway/subhub-plugin-subcheck",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "SubHub 代理可用性检测中间件插件，对接 SubCheck 探测服务。",
   "type": "module",
   "main": "./dist/index.js",
@@ -36,6 +36,6 @@
     "directory": "packages/subcheck"
   },
   "dependencies": {
-    "@siiway/subhub-plugin-sdk": "^0.1.0"
+    "@siiway/subhub-plugin-sdk": "^0.2.0"
   }
 }

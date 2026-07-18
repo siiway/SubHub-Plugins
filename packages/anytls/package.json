@@ -1,6 +1,6 @@
 {
   "name": "@siiway/subhub-plugin-anytls",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "SubHub AnyTLS 协议解析插件（anytls://）。",
   "type": "module",
   "main": "./dist/index.js",
@@ -35,6 +35,6 @@
     "directory": "packages/anytls"
   },
   "dependencies": {
-    "@siiway/subhub-plugin-sdk": "^0.1.0"
+    "@siiway/subhub-plugin-sdk": "^0.2.0"
   }
 }
