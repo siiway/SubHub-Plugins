@@ -1,6 +1,6 @@
 {
   "name": "@siiway/subhub-plugin-vless",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "SubHub VLESS 协议解析插件（vless://）。",
   "type": "module",
   "main": "./dist/index.js",
@@ -35,6 +35,6 @@
     "directory": "packages/vless"
   },
   "dependencies": {
-    "@siiway/subhub-plugin-sdk": "^0.1.0"
+    "@siiway/subhub-plugin-sdk": "^0.2.0"
   }
 }
