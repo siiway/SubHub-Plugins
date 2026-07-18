@@ -47,6 +47,16 @@ export interface ParsedNode {
   upMbps?: number;
   downMbps?: number;
 
+  // --- TUIC ---
+  /** 拥塞控制算法：cubic | new_reno | bbr */
+  congestionControl?: string;
+  /** UDP 转发模式：native | quic */
+  udpRelayMode?: string;
+  /** 0-RTT 握手 */
+  reduceRtt?: boolean;
+  /** 是否禁用 SNI */
+  disableSni?: boolean;
+
   /** 其余未归一化的原始查询参数，供格式插件按需取用 */
   extra?: Record<string, string>;
 }

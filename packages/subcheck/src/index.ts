@@ -116,7 +116,7 @@ export const subCheckPlugin: Plugin = {
       const subRes = await fetch(subCheckUrl, {
         method: 'POST',
         headers,
-        body: JSON.stringify({ links: [proxy.link] }),
+        body: JSON.stringify({ links: [proxy.link] })
       });
 
       if (!subRes.ok) {

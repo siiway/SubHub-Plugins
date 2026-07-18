@@ -22,6 +22,7 @@
 | `@siiway/subhub-plugin-hysteria2` | parser | Hysteria2 `hysteria2://` / `hy2://` |
 | `@siiway/subhub-plugin-hysteria` | parser | Hysteria `hysteria://` |
 | `@siiway/subhub-plugin-anytls` | parser | AnyTLS `anytls://` |
+| `@siiway/subhub-plugin-tuic` | parser | TUIC `tuic://` |
 | `@siiway/subhub-plugin-base64` | formatter | 通用 Base64 订阅 |
 | `@siiway/subhub-plugin-clash` | formatter | Clash / Mihomo YAML 订阅 |
 | `@siiway/subhub-plugin-response-header` | middleware | 响应头示例插件 |

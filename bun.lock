@@ -12,81 +12,88 @@
     },
     "packages/anytls": {
       "name": "@siiway/subhub-plugin-anytls",
-      "version": "0.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
     "packages/base64": {
       "name": "@siiway/subhub-plugin-base64",
-      "version": "0.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
     "packages/clash": {
       "name": "@siiway/subhub-plugin-clash",
-      "version": "0.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
     "packages/hysteria": {
       "name": "@siiway/subhub-plugin-hysteria",
-      "version": "0.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
     "packages/hysteria2": {
       "name": "@siiway/subhub-plugin-hysteria2",
-      "version": "0.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
     "packages/response-header": {
       "name": "@siiway/subhub-plugin-response-header",
-      "version": "0.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
     "packages/sdk": {
       "name": "@siiway/subhub-plugin-sdk",
-      "version": "0.0.0",
+      "version": "0.1.0",
     },
     "packages/shadowsocks": {
       "name": "@siiway/subhub-plugin-shadowsocks",
-      "version": "0.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
     "packages/subcheck": {
       "name": "@siiway/subhub-plugin-subcheck",
-      "version": "0.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
     "packages/trojan": {
       "name": "@siiway/subhub-plugin-trojan",
-      "version": "0.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
+    "packages/tuic": {
+      "name": "@siiway/subhub-plugin-tuic",
+      "version": "0.1.0",
+      "dependencies": {
+        "@siiway/subhub-plugin-sdk": "^0.1.0",
+      },
+    },
     "packages/vless": {
       "name": "@siiway/subhub-plugin-vless",
-      "version": "0.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
     "packages/vmess": {
       "name": "@siiway/subhub-plugin-vmess",
-      "version": "0.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
@@ -162,6 +169,8 @@
     "@siiway/subhub-plugin-subcheck": ["@siiway/subhub-plugin-subcheck@workspace:packages/subcheck"],
 
     "@siiway/subhub-plugin-trojan": ["@siiway/subhub-plugin-trojan@workspace:packages/trojan"],
+
+    "@siiway/subhub-plugin-tuic": ["@siiway/subhub-plugin-tuic@workspace:packages/tuic"],
 
     "@siiway/subhub-plugin-vless": ["@siiway/subhub-plugin-vless@workspace:packages/vless"],
 

@@ -82,6 +82,20 @@ function buildHysteria(node: ParsedNode, base: ClashProxy): ClashProxy {
   return proxy;
 }
 
+function buildTuic(node: ParsedNode, base: ClashProxy): ClashProxy {
+  const proxy: ClashProxy = { ...base };
+  if (node.uuid) proxy.uuid = node.uuid;
+  if (node.password) proxy.password = node.password;
+  if (node.sni) proxy.sni = node.sni;
+  if (node.alpn) proxy.alpn = node.alpn;
+  if (node.congestionControl) proxy['congestion-controller'] = node.congestionControl;
+  if (node.udpRelayMode) proxy['udp-relay-mode'] = node.udpRelayMode;
+  if (node.reduceRtt) proxy['reduce-rtt'] = true;
+  if (node.disableSni) proxy['disable-sni'] = true;
+  if (node.skipCertVerify) proxy['skip-cert-verify'] = true;
+  return proxy;
+}
+
 type ClashBuilder = (node: ParsedNode, base: ClashProxy) => ClashProxy;
 
 const BUILDERS: Partial<Record<string, ClashBuilder>> = {
@@ -92,6 +106,7 @@ const BUILDERS: Partial<Record<string, ClashBuilder>> = {
   hysteria2: buildHysteria2,
   hysteria: buildHysteria,
   anytls: buildAnytls,
+  tuic: buildTuic,
 };
 
 function buildAnytls(node: ParsedNode, base: ClashProxy): ClashProxy {
