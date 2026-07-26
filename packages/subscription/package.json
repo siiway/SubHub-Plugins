@@ -38,6 +38,6 @@
     "directory": "packages/subscription"
   },
   "dependencies": {
-    "@siiway/subhub-plugin-sdk": "^0.1.0"
+    "@siiway/subhub-plugin-sdk": "workspace:*"
   }
 }
