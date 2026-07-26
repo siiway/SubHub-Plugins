@@ -12,88 +12,95 @@
     },
     "packages/anytls": {
       "name": "@siiway/subhub-plugin-anytls",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
     "packages/base64": {
       "name": "@siiway/subhub-plugin-base64",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
     "packages/clash": {
       "name": "@siiway/subhub-plugin-clash",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
     "packages/hysteria": {
       "name": "@siiway/subhub-plugin-hysteria",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
     "packages/hysteria2": {
       "name": "@siiway/subhub-plugin-hysteria2",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
     "packages/response-header": {
       "name": "@siiway/subhub-plugin-response-header",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
     "packages/sdk": {
       "name": "@siiway/subhub-plugin-sdk",
-      "version": "0.1.0",
+      "version": "0.2.0",
     },
     "packages/shadowsocks": {
       "name": "@siiway/subhub-plugin-shadowsocks",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
     "packages/subcheck": {
       "name": "@siiway/subhub-plugin-subcheck",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
+    "packages/subscription": {
+      "name": "@siiway/subhub-plugin-subscription",
+      "version": "0.1.0",
+      "dependencies": {
+        "@siiway/subhub-plugin-sdk": "^0.1.0",
+      },
+    },
     "packages/trojan": {
       "name": "@siiway/subhub-plugin-trojan",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
     "packages/tuic": {
       "name": "@siiway/subhub-plugin-tuic",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.1.0",
       },
     },
     "packages/vless": {
       "name": "@siiway/subhub-plugin-vless",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
     },
     "packages/vmess": {
       "name": "@siiway/subhub-plugin-vmess",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "dependencies": {
         "@siiway/subhub-plugin-sdk": "^0.0.0",
       },
@@ -167,6 +174,8 @@
     "@siiway/subhub-plugin-shadowsocks": ["@siiway/subhub-plugin-shadowsocks@workspace:packages/shadowsocks"],
 
     "@siiway/subhub-plugin-subcheck": ["@siiway/subhub-plugin-subcheck@workspace:packages/subcheck"],
+
+    "@siiway/subhub-plugin-subscription": ["@siiway/subhub-plugin-subscription@workspace:packages/subscription"],
 
     "@siiway/subhub-plugin-trojan": ["@siiway/subhub-plugin-trojan@workspace:packages/trojan"],
 
@@ -367,6 +376,8 @@
     "@manypkg/get-packages/@changesets/types": ["@changesets/types@4.1.0", "", {}, "sha512-LDQvVDv5Kb50ny2s25Fhm3d9QSZimsoUGBsUioj6MC3qbMUCuC8GPIvk/M6IvXx3lYhAs0lwWUQLb+VIEUCECw=="],
 
     "@manypkg/get-packages/fs-extra": ["fs-extra@8.1.0", "", { "dependencies": { "graceful-fs": "^4.2.0", "jsonfile": "^4.0.0", "universalify": "^0.1.0" } }, "sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g=="],
+
+    "@siiway/subhub-plugin-subscription/@siiway/subhub-plugin-sdk": ["@siiway/subhub-plugin-sdk@0.1.0", "", {}, "sha512-6lBgps8Sdy21+I65K0PED41d1ToMkQApibaYjn2xTfPhck6oRhIabZ57ojviOyCccu0A788RbSt1UDUkQL/VOQ=="],
 
     "read-yaml-file/js-yaml": ["js-yaml@3.15.0", "", { "dependencies": { "argparse": "^1.0.7", "esprima": "^4.0.0" }, "bin": "bin/js-yaml.js" }, "sha512-ttBQIIQPDeLjpPOohtUdXuXUVoA2uIB6fEH9HyJ7234s5mBJ5wTx20njxplLZQgLaOfpmPQA7X2t5AX6tIPbog=="],
 
