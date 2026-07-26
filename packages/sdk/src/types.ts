@@ -149,10 +149,31 @@ export interface Plugin {
 }
 
 /**
+ * 订阅解析器插件。
+ * 负责获取订阅链接内容，解析为标准化条目列表。
+ * 支持三种回传格式：Clash YAML、V2Ray Base64、聚合节点链接。
+ */
+export interface SubscriptionParser {
+  /** 唯一标识 */
+  id: string;
+  /** 展示名 */
+  label: string;
+  /** 处理的 URL 前缀，如 ['https://', 'http://']；用于按前缀查找 */
+  schemes: string[];
+  /** 解析订阅链接；返回解析后的条目列表 */
+  resolve: (url: string, options?: SubscriptionResolveOptions) => Promise<ParsedEntry[]>;
+}
+
+export interface SubscriptionResolveOptions {
+  fetch?: typeof fetch;
+}
+
+/**
  * 注册表对插件暴露的最小接口（避免 register 回调直接依赖具体实现类，
  * 便于测试与解耦）。
  */
 export interface PluginRegistryLike {
   registerParser: (parser: ProtocolParser) => void;
   registerFormatter: (formatter: SubscriptionFormatter) => void;
+  registerSubscriptionParser: (parser: SubscriptionParser) => void;
 }

@@ -17,6 +17,8 @@ export type {
   ResponseHook,
   Plugin,
   PluginRegistryLike,
+  SubscriptionParser,
+  SubscriptionResolveOptions,
 } from './types';
 
 export {
