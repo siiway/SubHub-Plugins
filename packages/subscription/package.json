@@ -1,6 +1,6 @@
 {
   "name": "@siiway/subhub-plugin-subscription",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "SubHub 订阅链接解析插件：支持 Clash YAML / V2Ray Base64 / 聚合节点链接三种格式",
   "type": "module",
   "main": "./dist/index.js",

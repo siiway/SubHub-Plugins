@@ -1,5 +1,11 @@
 # @siiway/subhub-plugin-sdk
 
+## 0.2.1
+
+### Patch Changes
+
+- 2653be8: Add SubscriptionParser / SubscriptionResolveOptions / registerSubscriptionParser to PluginRegistryLike
+
 ## 0.2.0
 
 ### Minor Changes
