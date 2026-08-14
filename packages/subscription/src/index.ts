@@ -218,6 +218,36 @@ function fromClashAnytls(proxy: Record<string, YamlValue>): ParsedNode {
   return node;
 }
 
+function fromClashHttp(proxy: Record<string, YamlValue>): ParsedNode {
+  const node: ParsedNode = {
+    protocol: 'http',
+    name: str(proxy['name']),
+    server: str(proxy['server']),
+    port: num(proxy['port']),
+  };
+  const user = str(proxy['username']);
+  const pass = str(proxy['password']);
+  if (user) {
+    node.password = pass ? `${user}:${pass}` : user;
+  }
+  return node;
+}
+
+function fromClashSocks5(proxy: Record<string, YamlValue>): ParsedNode {
+  const node: ParsedNode = {
+    protocol: 'socks5',
+    name: str(proxy['name']),
+    server: str(proxy['server']),
+    port: num(proxy['port']),
+  };
+  const user = str(proxy['username']);
+  const pass = str(proxy['password']);
+  if (user) {
+    node.password = pass ? `${user}:${pass}` : user;
+  }
+  return node;
+}
+
 type ClashConverter = (proxy: Record<string, YamlValue>) => ParsedNode;
 
 const CLASH_CONVERTERS: Record<string, ClashConverter> = {
@@ -232,6 +262,8 @@ const CLASH_CONVERTERS: Record<string, ClashConverter> = {
   hy: fromClashHysteria,
   tuic: fromClashTuic,
   anytls: fromClashAnytls,
+  http: fromClashHttp,
+  socks5: fromClashSocks5,
 };
 
 // ─── V2Ray JSON / Plain link parsing ──────────────────────────────────
@@ -444,6 +476,18 @@ function nodeToLink(node: ParsedNode): string {
     if (node.skipCertVerify) params.set('insecure', '1');
     const qs = params.toString();
     return `${u}${qs ? '?' + qs : ''}#${label}`;
+  }
+
+  if (protocol === 'http') {
+    const pw = node.password ?? '';
+    const auth = pw ? `${encodeURIComponent(pw)}@` : '';
+    return `http://${auth}${server}:${port}#${label}`;
+  }
+
+  if (protocol === 'socks5') {
+    const pw = node.password ?? '';
+    const auth = pw ? `${encodeURIComponent(pw)}@` : '';
+    return `socks5://${auth}${server}:${port}#${label}`;
   }
 
   return name;

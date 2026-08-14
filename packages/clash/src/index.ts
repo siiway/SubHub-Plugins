@@ -82,6 +82,34 @@ function buildHysteria(node: ParsedNode, base: ClashProxy): ClashProxy {
   return proxy;
 }
 
+function buildHttp(node: ParsedNode, base: ClashProxy): ClashProxy {
+  const proxy: ClashProxy = { ...base };
+  if (node.password) {
+    const colon = node.password.indexOf(':');
+    if (colon >= 0) {
+      proxy.username = node.password.slice(0, colon);
+      proxy.password = node.password.slice(colon + 1);
+    } else {
+      proxy.username = node.password;
+    }
+  }
+  return proxy;
+}
+
+function buildSocks5(node: ParsedNode, base: ClashProxy): ClashProxy {
+  const proxy: ClashProxy = { ...base };
+  if (node.password) {
+    const colon = node.password.indexOf(':');
+    if (colon >= 0) {
+      proxy.username = node.password.slice(0, colon);
+      proxy.password = node.password.slice(colon + 1);
+    } else {
+      proxy.username = node.password;
+    }
+  }
+  return proxy;
+}
+
 function buildTuic(node: ParsedNode, base: ClashProxy): ClashProxy {
   const proxy: ClashProxy = { ...base };
   if (node.uuid) proxy.uuid = node.uuid;
@@ -107,6 +135,8 @@ const BUILDERS: Partial<Record<string, ClashBuilder>> = {
   hysteria: buildHysteria,
   anytls: buildAnytls,
   tuic: buildTuic,
+  http: buildHttp,
+  socks5: buildSocks5,
 };
 
 function buildAnytls(node: ParsedNode, base: ClashProxy): ClashProxy {
